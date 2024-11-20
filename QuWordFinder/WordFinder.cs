@@ -30,7 +30,7 @@ public class WordFinder
         foundWordsDict = FindAndPopulateWords(foundWordsDict, deduplicatedWordStream, _matrix);
         foundWordsDict = FindAndPopulateWords(foundWordsDict, deduplicatedWordStream, _rotatedMatrix);
 
-        foundWords = foundWordsDict.OrderByDescending(pair => pair.Value).Select(pair => pair.Key).Take(10).ToList();
+        foundWords = foundWordsDict.OrderByDescending(pair => pair.Value).Select(pair => pair.Key).Take(Constants.MaxRepeatedWordsNumber).ToList();
 
         return foundWords;
     }
